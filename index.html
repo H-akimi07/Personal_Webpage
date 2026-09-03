@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090d" />
+    <title>Samira Hakimi — AI & Software Developer</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="progress"></div>
+    <div id="cursorGlow"></div>
+    <div class="magical" id="particles"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">S<span>.</span>HAKIMI</a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#work">Work</a></li>
+            <li><a class="nav-link" href="#journey">Journey</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+            <li>
+              <button class="btn btn-sm btn-ghost ms-lg-2" id="themeBtn">
+                <i class="bi bi-moon-stars"></i>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-sm btn-ghost" id="cmdBtn">⌘ K</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="eyebrow">
+              <span class="pulse"></span> Building the future, one idea at a
+              time
+            </div>
+            <h1>
+              Not just a<br /><span class="gradient-text">developer.</span>
+            </h1>
+            <p class="hero-copy">
+              I'm <strong>Samira Hakimi</strong> — a curious builder, AI
+              enthusiast and software developer who turns ambitious ideas into
+              experiences people remember.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-gold" href="#work"
+                >Explore my universe <i class="bi bi-arrow-up-right ms-1"></i
+              ></a>
+              <a class="btn btn-ghost" href="#contact"
+                >Let's create something</a
+              >
+            </div>
+            <div class="mt-4 small text-secondary">
+              AI • Full-Stack • Creative Technology • Lifelong Learning
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-orb">
+              <div class="orb-label">
+                <div><strong>AI</strong><small>with purpose</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row g-5 align-items-end">
+          <div class="col-lg-7 reveal">
+            <div class="section-kicker">01 / The person</div>
+            <h2 class="section-title mt-2">
+              Ambition with a<br /><span class="gradient-text"
+                >human heartbeat.</span
+              >
+            </h2>
+            <p class="section-sub mt-4">
+              I love technology, but what drives me is what technology can
+              unlock: opportunities, independence, education and beautiful
+              solutions to real problems. I learn aggressively, build fearlessly
+              and keep raising the bar.
+            </p>
+          </div>
+          <div class="col-lg-5 reveal">
+            <div class="glass p-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="project-icon mb-0"><i class="bi bi-stars"></i></div>
+                <div>
+                  <strong>Current mode</strong><br /><span
+                    class="text-secondary"
+                    >Learn → Build → Share → Repeat</span
+                  >
+                </div>
+              </div>
+              <hr class="border-secondary opacity-25 my-4" />
+              <p class="mb-0 text-secondary">
+                “The goal isn't to know everything. It's to become the kind of
+                person who can figure anything out.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-5">
+          <div class="col-md-3 reveal">
+            <div class="glass stat">
+              <div class="stat-number counter" data-target="31">0</div>
+              <p>GitHub repositories</p>
+            </div>
+          </div>
+          <div class="col-md-3 reveal">
+            <div class="glass stat">
+              <div class="stat-number counter" data-target="6">0</div>
+              <p>Months of web-development internship</p>
+            </div>
+          </div>
+          <div class="col-md-3 reveal">
+            <div class="glass stat">
+              <div class="stat-number counter" data-target="4">0</div>
+              <p>Core technologies in my stack</p>
+            </div>
+          </div>
+          <div class="col-md-3 reveal">
+            <div class="glass stat">
+              <div class="stat-number counter" data-target="1">0</div>
+              <p>Big vision</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-end reveal"
+        >
+          <div>
+            <div class="section-kicker">02 / Selected work</div>
+            <h2 class="section-title mt-2">
+              Things I <span class="gradient-text">built.</span>
+            </h2>
+          </div>
+          <div class="btn-group" id="filters">
+            <button class="btn btn-ghost active" data-filter="all">All</button>
+            <button class="btn btn-ghost" data-filter="ai">AI</button>
+            <button class="btn btn-ghost" data-filter="web">Web</button>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4" id="projectGrid">
+          <div class="col-md-6 col-lg-4 project-wrap reveal" data-category="ai">
+            <article class="glass project-card tilt">
+              <div class="project-icon"><i class="bi bi-mic-fill"></i></div>
+              <h4>MeetMind</h4>
+              <p>
+                An AI-powered meeting assistant that transforms rough notes and
+                conversations into summaries, insights and simple action items.
+              </p>
+              <div>
+                <span class="tag">React</span><span class="tag">Node.js</span
+                ><span class="tag">MongoDB</span><span class="tag">AI</span>
+              </div>
+            </article>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 project-wrap reveal"
+            data-category="web"
+          >
+            <article class="glass project-card tilt">
+              <div class="project-icon"><i class="bi bi-translate"></i></div>
+              <h4>Polyglot</h4>
+              <p>
+                A multilingual web experience designed around language
+                exploration, learning and a playful user journey.
+              </p>
+              <div>
+                <span class="tag">JavaScript</span><span class="tag">APIs</span
+                ><span class="tag">UI/UX</span>
+              </div>
+            </article>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 project-wrap reveal"
+            data-category="web"
+          >
+            <article class="glass project-card tilt">
+              <div class="project-icon">
+                <i class="bi bi-bar-chart-fill"></i>
+              </div>
+              <h4>PopChoice</h4>
+              <p>
+                A polished interactive concept focused on user choices, dynamic
+                content and engaging front-end interactions.
+              </p>
+              <div>
+                <span class="tag">HTML</span><span class="tag">CSS</span
+                ><span class="tag">JavaScript</span>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 project-wrap reveal" data-category="ai">
+            <article class="glass project-card tilt">
+              <div class="project-icon"><i class="bi bi-robot"></i></div>
+              <h4>AI Experiments</h4>
+              <p>
+                Small experiments connecting modern AI APIs with practical
+                interfaces — learning by shipping instead of only reading.
+              </p>
+              <div>
+                <span class="tag">OpenAI</span
+                ><span class="tag">Cloudflare</span
+                ><span class="tag">Embeddings</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 reveal">
+            <div class="section-kicker">03 / The journey</div>
+            <h2 class="section-title mt-2">
+              Every chapter made me <span class="gradient-text">stronger.</span>
+            </h2>
+            <p class="section-sub mt-4">
+              Not a perfectly straight path. A meaningful one.
+            </p>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="timeline">
+              <div class="timeline-item">
+                <small>FOUNDATIONS</small>
+                <h5>Computer Science</h5>
+                <p>
+                  Built a foundation in programming and computer science while
+                  developing a deep interest in the web.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <small>BUILDING</small>
+                <h5>Web Development</h5>
+                <p>
+                  Worked with HTML, CSS, Bootstrap, JavaScript, PHP, MySQL and
+                  React — learning through real projects.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <small>AI ERA</small>
+                <h5>From interfaces to intelligent products</h5>
+                <p>
+                  Moved deeper into APIs, AI integrations, embeddings,
+                  Cloudflare and full-stack product development.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <small>NEXT</small>
+                <h5>International growth</h5>
+                <p>
+                  Preparing for the next academic and professional chapter with
+                  an international mindset and a very ambitious target.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 reveal">
+            <div class="section-kicker">04 / My toolkit</div>
+            <h2 class="section-title mt-2">
+              Curiosity is my <span class="gradient-text">superpower.</span>
+            </h2>
+            <p class="section-sub mt-4">
+              Tools change. The ability to learn them doesn't.
+            </p>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="skill-pill">
+              <span
+                ><i class="bi bi-code-slash me-2"></i>JavaScript / React</span
+              ><span>BUILD</span>
+            </div>
+            <div class="skill-pill">
+              <span><i class="bi bi-server me-2"></i>Node.js / Express</span
+              ><span>BACKEND</span>
+            </div>
+            <div class="skill-pill">
+              <span><i class="bi bi-database me-2"></i>MongoDB / MySQL</span
+              ><span>DATA</span>
+            </div>
+            <div class="skill-pill">
+              <span><i class="bi bi-stars me-2"></i>AI APIs / LLMs</span
+              ><span>AI</span>
+            </div>
+            <div class="skill-pill">
+              <span><i class="bi bi-cloud me-2"></i>Cloudflare / Vercel</span
+              ><span>DEPLOY</span>
+            </div>
+            <div class="skill-pill">
+              <span
+                ><i class="bi bi-megaphone me-2"></i>Teaching &
+                Communication</span
+              ><span>PEOPLE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="glass p-5 reveal">
+          <div class="quote">
+            “I don't want to simply
+            <span class="gradient-text">find a place</span> in the future. I
+            want to help build it.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="glass contact-box reveal">
+          <div class="position-relative">
+            <div class="section-kicker">05 / The next move</div>
+            <h2 class="section-title mt-3">Have an idea?</h2>
+            <p class="section-sub mx-auto">
+              Let's turn it into something people can't stop talking about.
+            </p>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+              <button class="btn btn-gold" id="helloBtn">
+                Start a conversation <i class="bi bi-arrow-up-right"></i>
+              </button>
+              <button class="btn btn-ghost" id="copyBtn">
+                <i class="bi bi-copy me-2"></i>Copy my intro
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+      >
+        <span>© 2026 Samira Hakimi</span>
+        <span>Designed with ambition. Built with code. ✦</span>
+      </div>
+    </footer>
+
+    <div id="commandPalette">
+      <div class="glass command-box">
+        <input
+          id="commandInput"
+          placeholder="Type a command… e.g. work, skills, contact"
+          autocomplete="off"
+        />
+        <div class="mt-3">
+          <div class="command-item" data-go="#work">⌘ → Explore work</div>
+          <div class="command-item" data-go="#skills">⌘ → View skills</div>
+          <div class="command-item" data-go="#journey">⌘ → See journey</div>
+          <div class="command-item" data-go="#contact">
+            ⌘ → Start a conversation
+          </div>
+        </div>
+        <div class="text-secondary small mt-3">Press Esc to close</div>
+      </div>
+    </div>
+
+    <div class="toast-custom" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
