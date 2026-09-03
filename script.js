@@ -163,3 +163,188 @@ document.addEventListener("keydown", (e) => {
   keys = (keys + e.key.toLowerCase()).slice(-10);
   if (keys.includes("samira")) showToast("✦ You found the secret: keep going.");
 });
+
+// ===== EXTRA JS MAGIC =====
+window.addEventListener("load", () =>
+  setTimeout(
+    () => document.getElementById("preloader").classList.add("hide"),
+    500,
+  ),
+);
+const backTop = document.getElementById("backTop");
+window.addEventListener("scroll", () =>
+  backTop.classList.toggle("show", scrollY > 650),
+);
+backTop.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+
+// Ripple buttons
+for (const b of document.querySelectorAll(".btn"))
+  b.addEventListener("click", (e) => {
+    const r = document.createElement("span");
+    r.className = "ripple";
+    const q = b.getBoundingClientRect(),
+      z = Math.max(q.width, q.height);
+    r.style.width = r.style.height = z + "px";
+    r.style.left = e.clientX - q.left - z / 2 + "px";
+    r.style.top = e.clientY - q.top - z / 2 + "px";
+    b.appendChild(r);
+    setTimeout(() => r.remove(), 650);
+  });
+
+// Magnetic interactions
+for (const el of document.querySelectorAll(".btn-gold,.navbar-brand")) {
+  el.classList.add("magnetic");
+  el.addEventListener("pointermove", (e) => {
+    const r = el.getBoundingClientRect();
+    el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.12}px,${(e.clientY - r.top - r.height / 2) * 0.12}px)`;
+  });
+  el.addEventListener("pointerleave", () => (el.style.transform = ""));
+}
+
+// Custom cursor
+const dot = document.querySelector(".cursor-dot"),
+  ring = document.querySelector(".cursor-ring");
+let mx = innerWidth / 2,
+  my = innerHeight / 2,
+  rx = mx,
+  ry = my;
+addEventListener("pointermove", (e) => {
+  mx = e.clientX;
+  my = e.clientY;
+  dot.style.left = mx + "px";
+  dot.style.top = my + "px";
+});
+(function loop() {
+  rx += (mx - rx) * 0.16;
+  ry += (my - ry) * 0.16;
+  ring.style.left = rx + "px";
+  ring.style.top = ry + "px";
+  requestAnimationFrame(loop);
+})();
+for (const el of document.querySelectorAll(
+  "a,button,.project-card,.skill-pill",
+)) {
+  el.addEventListener("mouseenter", () => {
+    ring.style.width = "48px";
+    ring.style.height = "48px";
+  });
+  el.addEventListener("mouseleave", () => {
+    ring.style.width = "32px";
+    ring.style.height = "32px";
+  });
+}
+
+// Rotating hero copy
+const words = [
+  "AI experiences.",
+  "full-stack products.",
+  "beautiful interfaces.",
+  "ideas people remember.",
+  "the next chapter.",
+];
+let wi = 0;
+const wr = document.getElementById("wordRotate");
+setInterval(() => {
+  wr.style.opacity = 0;
+  wr.style.transform = "translateY(8px)";
+  setTimeout(() => {
+    wi = (wi + 1) % words.length;
+    wr.textContent = words[wi];
+    wr.style.opacity = 1;
+    wr.style.transform = "translateY(0)";
+  }, 250);
+}, 2300);
+
+// Keyboard section shortcuts: 1-6
+addEventListener("keydown", (e) => {
+  if (e.target.matches("input,textarea")) return;
+  const m = {
+    1: "#home",
+    2: "#about",
+    3: "#work",
+    4: "#journey",
+    5: "#skills",
+    6: "#contact",
+  };
+  if (m[e.key]) {
+    document.querySelector(m[e.key]).scrollIntoView({ behavior: "smooth" });
+    showToast("Section " + e.key + " opened ✦");
+  }
+});
+
+// Double-click project spotlight
+for (const card of document.querySelectorAll(".project-card"))
+  card.addEventListener("dblclick", () => {
+    card.classList.toggle("spotlight");
+    card.style.boxShadow = card.classList.contains("spotlight")
+      ? "0 0 0 1px rgba(217,181,109,.55),0 25px 100px rgba(217,181,109,.12)"
+      : "";
+    showToast(
+      card.classList.contains("spotlight")
+        ? "Project spotlight activated ✦"
+        : "Spotlight closed",
+    );
+  });
+
+// Secret word
+let secret = "";
+addEventListener("keydown", (e) => {
+  secret = (secret + e.key.toLowerCase()).slice(-20);
+  if (secret.includes("future")) {
+    document.body.animate(
+      [
+        { filter: "brightness(1)" },
+        { filter: "brightness(1.35)" },
+        { filter: "brightness(1)" },
+      ],
+      { duration: 900 },
+    );
+    showToast("🚀 Future mode unlocked. Keep building.");
+  }
+});
+
+// Native share button where supported
+if (navigator.share) {
+  const b = document.createElement("button");
+  b.className = "btn btn-ghost mt-3 ms-2";
+  b.innerHTML = '<i class="bi bi-share me-2"></i>Share my universe';
+  document.querySelector("#contact .d-flex").appendChild(b);
+  b.onclick = () =>
+    navigator.share({
+      title: "Samira Hakimi — AI & Software Developer",
+      text: "Explore Samira Hakimi’s digital universe.",
+      url: location.href,
+    });
+}
+
+// Active navigation state
+const navs = [...document.querySelectorAll(".nav-link")];
+const secs = [...document.querySelectorAll("section[id]")];
+new IntersectionObserver(
+  (es) =>
+    es.forEach((x) => {
+      if (x.isIntersecting)
+        navs.forEach((a) =>
+          a.classList.toggle(
+            "active",
+            a.getAttribute("href") === "#" + x.target.id,
+          ),
+        );
+    }),
+  { rootMargin: "-35% 0px -55% 0px" },
+).observe;
+secs.forEach((s) =>
+  new IntersectionObserver(
+    (es) =>
+      es.forEach((x) => {
+        if (x.isIntersecting)
+          navs.forEach((a) =>
+            a.classList.toggle(
+              "active",
+              a.getAttribute("href") === "#" + x.target.id,
+            ),
+          );
+      }),
+    { rootMargin: "-35% 0px -55% 0px" },
+  ).observe(s),
+);
