@@ -90,7 +90,7 @@ body.light {
   background: rgba(245, 243, 237, 0.7) !important;
 }
 .navbar-brand {
-  font-weight: 900;
+  font-weight: 901;
   letter-spacing: 0.12em;
   color: var(--text) !important;
 }
