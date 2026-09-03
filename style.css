@@ -116,7 +116,7 @@ body.light {
   display: inline-flex;
   gap: 8px;
   align-items: center;
-  padding: 9px 13px;
+  padding: 8px 13px;
   border: 1px solid var(--line);
   border-radius: 100px;
   background: var(--card);
