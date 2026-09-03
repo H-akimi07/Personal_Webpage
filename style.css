@@ -169,7 +169,7 @@ body.light {
   background: linear-gradient(135deg, var(--gold2), var(--gold));
   border: 0;
   color: #15120b;
-  font-weight: 900;
+  font-weight: 901;
   border-radius: 14px;
   padding: 14px 21px;
   box-shadow: 0 15px 35px rgba(217, 181, 109, 0.16);
