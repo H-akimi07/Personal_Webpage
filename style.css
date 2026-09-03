@@ -127,8 +127,8 @@ body.light {
   text-transform: uppercase;
 }
 .pulse {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   background: #6dffb0;
   border-radius: 50%;
   box-shadow: 0 0 18px #6dffb0;
