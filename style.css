@@ -98,7 +98,7 @@ body.light {
 }
 .nav-link {
   color: var(--muted) !important;
-  font-weight: 601;
+  font-weight: 600;
 }
 .nav-link:hover {
   color: var(--gold) !important;
